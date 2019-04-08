@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app='ToDo'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .done {
+            text-decoration: line-through;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="control/toDoControl.js"></script>
+    <div ng-include src="'menu.html'"></div>
+    <p class="afazertitulo"> Aqui você pode cadastrar tarefas e fazer a manutenção das mesmas</br>
+        Digite suas tarefas e clique em Submeter</br>
+    </p>
+    <div class="afazer" ng-controller="toDoControl">
+        <form name="frm" ng-submit="addTodo()" >
+            <input type="text" name="newtodo" ng-model="newTodo" required class="form-control" />
+            <button ne-disabled="frm.$invalid" class="btn btn-primary mb-2">Submeter</button>
+        </form>
+        <button class="btn2" ng-click="limparCampo()">Limpar Tarefas Feitas</button>
+        <ul class="list-group">
+            <li ng-repeat="todo in todos" class="list-group-item">
+                <input type="checkbox" ng-model="todo.done" />
+                <span ng-class="{'done': todo.done}">{{todo.title}}</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
