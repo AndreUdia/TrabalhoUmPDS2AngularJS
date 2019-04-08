@@ -527,9 +527,9 @@ mark,
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
-  max-width: 100%;
-  height: auto;
+  border-radius: 0.55rem;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .figure {

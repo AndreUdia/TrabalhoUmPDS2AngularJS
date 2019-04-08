@@ -3,7 +3,7 @@ app.controller('toDoControl',['$scope',function($scope) {
 
     // esta parte do $http ficou meio confusa
 
-    var url = 'http://localhost:8080/SistemaEcommerce/todos';
+    //var url = 'http://localhost:8080/SistemaEcommerce/todos';
 
     $scope.todos = [
         {'title': 'Fazer o trabalho de Angular JS','done': true},
